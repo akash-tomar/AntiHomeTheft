@@ -134,7 +134,7 @@ class MyChatBotView(generic.View):
             for message in entry['messaging']:
                 try:
                     if 'postback' in message:
-                        handle_postback(message['sender']['id'],message['postback']['payload'])
+                      handle_postback(message['sender']['id'],message['postback']['payload'])
                     else:
                         pass
                 except Exception as e:
@@ -152,9 +152,3 @@ class MyChatBotView(generic.View):
 
         return HttpResponse() 
 
-def getImage(request):
-	if request.method == 'POST':
-		id_of_user = request.POST.get('id')
-		image = request.POST.get('image')
-
-		#send this data to messeneger

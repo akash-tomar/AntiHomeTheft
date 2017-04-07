@@ -152,3 +152,9 @@ class MyChatBotView(generic.View):
 
         return HttpResponse() 
 
+def getImage(request):
+	if request.method == 'POST':
+		id_of_user = request.POST.get('id')
+		image = request.POST.get('image')
+
+		#send this data to messeneger
